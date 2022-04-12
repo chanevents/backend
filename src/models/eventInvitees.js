@@ -33,6 +33,7 @@ const eventInviteesSchema = new mongoose.Schema({
   sendInvitationInvitee: {
     type: Boolean,
     trim: true,
+    default: false,
   },
   confirmInvitees: {
     type: Number,
@@ -41,6 +42,7 @@ const eventInviteesSchema = new mongoose.Schema({
   sentInvitations: {
     type: Boolean,
     trim: true,
+    default: false,
   },
   pendingInvitations: {
     type: Number,
