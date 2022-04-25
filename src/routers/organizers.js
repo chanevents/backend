@@ -49,15 +49,13 @@ router.post("/signup", async (request, response) => {
 router.post("/login", async (request, response) => {
   try {
     const { email, password } = request.body;
-    // const token = await useCasesWriter.login(email, password);
-    const writerInfo = await useCasesOrganizer.login(email, password);
-
+    const organizerInfo = await useCasesOrganizer.login(email, password);
+    console.log(organizerInfo, "organizerInfo");
     response.json({
       success: true,
       message: " organizer logged in",
       data: {
-        token: organizerInfo.token,
-        id: organizerInfo.id,
+        token: organizerInfo,
       },
     });
   } catch (error) {
